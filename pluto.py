@@ -83,26 +83,8 @@ def joke():
     speak(pyjokes.get_joke())
 
 def whatCanIDo():
-    actions = [["Tell date", "Tell me current date"],
-    ["Tell time", "Tell me current time"],
-    ["Wikipedia Search", "wikipedia 'Search term'"],
-    ["Google Search", "Search in google"],
-    ["Youtube Search", "Search in Youtube"],
-    ["CPU & Battery Status", "What is the CPU status"],
-    ["Tell Joke", "tell me a joke"],
-    ["Shutdown", "go offline"],
-    ["Get help", "What can you do?"],
-    ["Take screenshot", "Take a screenshot"],
-    # ["Set reminder", "Remind me"],
-    # ["Show reminder", "Show reminders"],
-    ["Tell news", "tell me some news"],
-    ["Location search", "Where is London"],
-    ["Stop Listening", "Stop Listening"],
-    ["Log out System", "Log out"],
-    ["Restart System", "Restart"],
-    ["Shutdown system", "Shutdown"],
-    ]
-    print(tabulate(actions, headers=['Actions', 'Commands'], tablefmt='orgtbl'))
+    speak('Opening my command document')
+    wb.open_new_tab('https://github.com/deva-prakash-git/pluto/blob/main/commands.txt')
 
 def screenshot():
     img = pyautogui.screenshot()
@@ -127,8 +109,9 @@ def latestNews():
         print(str(e))
 
 if __name__ == "__main__":
+    print('Pluto Loaded successfully!')
+    print('Ask me "What can you do?" to open my command document (or) get my commands from "https://github.com/deva-prakash-git/pluto/blob/main/commands.txt"')
     wishme()
-    whatCanIDo()
     while True:
         query = takeCommand().lower()
         if 'date' in query:
