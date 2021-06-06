@@ -1,20 +1,23 @@
-import pyttsx3
+import pyttsx3 #pip install pyttsx3
 import datetime
-import speech_recognition as sr
-import wikipedia as wp
+import speech_recognition as sr #pip install speechRecognition
+import wikipedia as wp #pip install wikipedia
 import smtplib as smtp
 import webbrowser as wb
-import psutil
-import pyjokes
-import pyautogui
+import psutil #pip install psutil
+import pyjokes #pip install pyjokes
+import pyautogui #pip install pyautogui #pip install pillow
 import getpass
 import uuid
 import json
-import requests
 from urllib.request import urlopen
 import time
 import os
-from tabulate import tabulate
+from tabulate import tabulate #pip install tabulate
+import sysfunc as sf
+import utilitis as util
+import assist
+import msapps
 
 engine = pyttsx3.init()
 
@@ -49,14 +52,6 @@ def wishme():
     #time_()
     #date_()
     speak("Pluto at your service. Please tell me how can i help you today?")
-
-def sendEmail(to, content):
-    server = smtp.SMTP('smtp.gmail.com', 587)
-    server.ehlo()
-    server.starttls()
-    server.login('plutoai1.0@gmail.com', 'Deva@123')
-    server.sendmail('plutoai1.0@gmail.com', to, content)
-    server.close()
 
 def takeCommand():
     r = sr.Recognizer()
@@ -96,11 +91,10 @@ def whatCanIDo():
     ["CPU & Battery Status", "What is the CPU status"],
     ["Tell Joke", "tell me a joke"],
     ["Shutdown", "go offline"],
-    ["send email", "send a mail"],
     ["Get help", "What can you do?"],
     ["Take screenshot", "Take a screenshot"],
-    ["Set reminder", "Remind me"],
-    ["Show reminder", "Show reminders"],
+    # ["Set reminder", "Remind me"],
+    # ["Show reminder", "Show reminders"],
     ["Tell news", "tell me some news"],
     ["Location search", "Where is London"],
     ["Stop Listening", "Stop Listening"],
@@ -112,7 +106,7 @@ def whatCanIDo():
 
 def screenshot():
     img = pyautogui.screenshot()
-    img.save('C:/Users/' + getpass.getuser() + '/Pictures/screenshot_' + str(uuid.uuid1()) + '.png')
+    img.save('C:/Users/' + getpass.getuser() + '/Pictures/Screenshots/screenshot_' + str(uuid.uuid1()) + '.png')
 
 def latestNews():
     try:
@@ -128,11 +122,11 @@ def latestNews():
             if i == 5:
                 break
             i += 1
+        print('\n\n')
     except Exception as e:
         print(str(e))
 
 if __name__ == "__main__":
-    screenshot()
     wishme()
     whatCanIDo()
     while True:
@@ -151,18 +145,6 @@ if __name__ == "__main__":
                 speak(result)
             except Exception as e:
                 speak('Please be more specific')
-        elif 'send email' in query or 'send a mail' in query:
-            try:
-                speak(" What should i say ?")
-                content = takeCommand()
-                speak(" Who is the reciever?")
-                reciever = input("Enter reviever's email: ")
-                sendEmail(reciever, content)
-                speak(content)
-                speak('Email has been sent.')
-            except Exception as e:
-                print(e)
-                speak('unable to send the email')
         elif 'search in google' in query or 'google' in query:
             speak('what should i search?')
             chromePath = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
@@ -170,7 +152,7 @@ if __name__ == "__main__":
             search = search.split(" ")
             speak('Here we go to Chrome!')
             url = 'https://www.google.com/search?q=' + '+'.join(search)
-            wb.get(chromePath).open_new_tab(url)
+            wb.open_new_tab(url)
         elif 'search in youtube' in query or 'youtube' in query:
             speak('what should i search?')
             chromePath = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
@@ -178,7 +160,7 @@ if __name__ == "__main__":
             search = search.split(" ")
             speak('Here we go to youtube!')
             url = 'https://www.youtube.com/results?search_query=' + '+'.join(search)
-            wb.get(chromePath).open_new_tab(url)
+            wb.open_new_tab(url)
         elif 'cpu' in query:
             cpu()
         elif 'joke' in query:
@@ -191,16 +173,16 @@ if __name__ == "__main__":
         elif 'screenshot' in query:
             screenshot()
             speak('Screenshot stored in Picture folder')
-        elif 'remind me' in query:
-            speak("What's the reminder? ")
-            memory = takeCommand()
-            speak('You asked me to remind that ' + memory)
-            remember = open('memory.txt', 'w')
-            remember.write(memory)
-            remember.close()
-        elif 'show reminder' in query:
-            remember = open('memory.txt', 'r')
-            speak('You asked me to remind that ' + remember.read())
+        # elif 'remind me' in query:
+        #     speak("What's the reminder? ")
+        #     memory = takeCommand()
+        #     speak('You asked me to remind that ' + memory)
+        #     remember = open('memory.txt', 'w')
+        #     remember.write(memory)
+        #     remember.close()
+        # elif 'show reminder' in query:
+        #     remember = open('memory.txt', 'r')
+        #     speak('You asked me to remind that ' + remember.read())
         elif 'news' in query:
             latestNews()
         elif 'where is' in query:
@@ -216,9 +198,18 @@ if __name__ == "__main__":
             seconds = int(ans.replace('seconds', '').replace('second', ''))
             print('Pluto: Shutting down for ' + ans)
             time.sleep(seconds)
-        elif 'restart' in query:
+        elif 'restart' in query or 'reboot' in query:
+            speak('Ok, Restarting your PC')
             os.system('shutdown /r /t 1')
         elif 'log out' in query:
+            speak("Okay Signing out from this user")
             os.system('shutdown -l')
         elif 'shutdown' in query:
+            speak('Ok, shutting down your PC')
             os.system('shutdown /s /t 1')
+        else:
+            msapps.apps(query)
+            sf.sys(query)
+            util.service(query)
+            assist.assitant(query)
+            

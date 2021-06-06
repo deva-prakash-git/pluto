@@ -1,0 +1,75 @@
+To Execute Pluto's Command just by saying ""shutdown my pc"" after showing listening... in cmd
+
+==== Pluto can also run System Services ====
+open control panel (or) control panel
+open file explorer (or)show me the files in this PC
+open Run (or) open run command (or) open run command box
+open command prompt
+open task manager
+open my computer (or) open this PC
+show my drives in this PC (or) show my drives (or) show my drive
+show downloads folder (or) open downloads folder (or) show my downloads (or) open my downloads folder (or) show my downloads folder
+What is the CPU status
+
+====Power controls these actions Pluto can do====
+shutdown my PC
+restart my PC (or) reboot my PC
+log out this user
+
+==== Microsoft Apps That Pluto can Launch for you ====
+open Paint
+open Notepad
+open camera
+open settings (or) open Windows settings
+show me the calendar (or) open calendar (or) show calendar (or) show me this month in calendar
+open music player (or) play music
+open calc (or) open calculator
+open alarm (or) set alarm (or) open Stopwatch
+open Microsoft edge (or) open edge
+open photos (or) open my gallery (or) show my gallery (or) open my photos
+open Windows security (or) open Windows security settings (or) open Windows Defender
+open video player (or) open movies and TV
+
+
+====Google Search service====
+search in Google
+search Google
+search result in Google
+
+====Youtube Search service====
+search in Youtube
+search Youtube
+search result in Youtube
+
+====Wikipedia Search service====
+search in Wikipedia
+search Wikipedia
+search result in Wikipedia
+
+======Common Commands for Talking With Pluto====
+I love you
+love you
+I miss you
+miss you so much
+where are you
+from which country you are
+who is your father
+who developed you'
+who are you
+where are you from
+you are beautiful
+you have a nice voice
+I like your voice
+
+======Commands to control Pluto====
+Go Offline (or) Go Offline Pluto
+What can you do?
+Stop listening (or) Stop listening Pluto
+
+======Other Pluto services====
+Tell me current time
+Tell me current date
+Tell me a joke
+Take a screenshot
+Tell me some news
+Where is London
