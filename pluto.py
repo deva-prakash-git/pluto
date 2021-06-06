@@ -149,6 +149,8 @@ if __name__ == "__main__":
             speak('what should i search?')
             chromePath = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
             search = takeCommand().lower()
+            while search == 'none':
+                speak('Sorry! Can you please say that again')
             search = search.split(" ")
             speak('Here we go to Chrome!')
             url = 'https://www.google.com/search?q=' + '+'.join(search)
@@ -157,6 +159,8 @@ if __name__ == "__main__":
             speak('what should i search?')
             chromePath = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
             search = takeCommand().lower()
+            while search == 'none':
+                speak('Sorry! Can you please say that again')
             search = search.split(" ")
             speak('Here we go to youtube!')
             url = 'https://www.youtube.com/results?search_query=' + '+'.join(search)
