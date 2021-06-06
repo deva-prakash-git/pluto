@@ -18,6 +18,7 @@ import sysfunc as sf
 import utilitis as util
 import assist
 import msapps
+import sys
 
 engine = pyttsx3.init()
 
@@ -154,7 +155,7 @@ if __name__ == "__main__":
             joke()
         elif 'go offline' in query or 'offline' in query:
             speak('Going Offline')
-            quit()
+            sys.exit()
         elif 'what can you do' in query:
             whatCanIDo()
         elif 'screenshot' in query:

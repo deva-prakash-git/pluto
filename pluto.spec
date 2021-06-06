@@ -4,8 +4,8 @@
 block_cipher = None
 
 
-a = Analysis(['pluto.ico'],
-             pathex=['C:\\Users\\Devaprakash.j\\Desktop\\Jarvis'],
+a = Analysis(['pluto.py'],
+             pathex=['D:\\Git\\pluto'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -20,19 +20,15 @@ pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
           [],
-          exclude_binaries=True,
           name='pluto',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
+          upx_exclude=[],
+          runtime_tmpdir=None,
           console=True , icon='Pluto-icon.ico')
-coll = COLLECT(exe,
-               a.binaries,
-               a.zipfiles,
-               a.datas,
-               strip=False,
-               upx=True,
-               upx_exclude=[],
-               name='pluto')
