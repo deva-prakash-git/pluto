@@ -13,7 +13,6 @@ import json
 from urllib.request import urlopen
 import time
 import os
-from tabulate import tabulate #pip install tabulate
 import sysfunc as sf
 import utilitis as util
 import assist
@@ -85,7 +84,7 @@ def joke():
 
 def whatCanIDo():
     speak('Opening my command document')
-    wb.open_new_tab('https://github.com/deva-prakash-git/pluto/blob/main/commands.txt')
+    wb.open_new_tab('https://raw.githubusercontent.com/deva-prakash-j/pluto/main/commands.txt')
 
 def screenshot():
     img = pyautogui.screenshot()
@@ -111,7 +110,7 @@ def latestNews():
 
 if __name__ == "__main__":
     print('Pluto Loaded successfully!')
-    print('Ask me "What can you do?" to open my command document (or) get my commands from "https://github.com/deva-prakash-git/pluto/blob/main/commands.txt"')
+    print('Ask me "What can you do?" to open my command document (or) get my commands from "https://raw.githubusercontent.com/deva-prakash-j/pluto/main/commands.txt"')
     wishme()
     while True:
         query = takeCommand().lower()
